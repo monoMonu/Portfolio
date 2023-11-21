@@ -1,0 +1,85 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Ubuntu:wght@400;500;700&display=swap');
+
+/* Google Material Icons library */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css');
+
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+button{
+   border: none;
+   outline: none;
+   background: transparent;
+   color: var(--theme2);
+}
+html{
+   font-size: 16px;
+}
+:root{
+   --theme1:#22222b;
+   --theme2:#eeeeef;
+}
+.section{
+   width: 100vw;
+   height: 100vh;
+   position: relative;
+   overflow: hidden;
+   background: var(--theme1);
+   color: var(--theme2);
+   font-family: 'Ubuntu', sans-serif;
+}
+header{
+   display: flex;
+   align-items: center;
+   justify-content: end;
+   /* background: #fff4; */
+   height: 3.2rem;
+   font: 400 1.5rem 'caveat Brush',sans-serif;
+}
+.heading{
+   margin-right: 15px;
+   font-size: 2rem;
+}
+.mode-switch{
+   width: 3.2rem;
+   height: 100%;
+   
+}
+.main{
+   /* background: red; */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+}
+.main-left,.main-right{
+   /* background-color: blue; */
+   flex: 1;
+   padding: 0 10px;
+}
+.main-left{
+   text-align: right;
+}
+
+.pfp{
+   min-width: 300px;
+   width: 50%;
+   height: 300px;
+   border-radius: 15px;
+   object-fit: cover;
+}
+.contacts{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
+   width: 50px;
+   max-height: 50vh;
+   height: 100vh;
+}
+.contacts button{
+   font-size: 20px;
+}
