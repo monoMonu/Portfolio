@@ -17,19 +17,22 @@ button{
    cursor: pointer;
 }
 html{
-   font-size: 16px;
+   font-size: 18px;
 }
 :root{
+   --theme2:#eef;
    --theme1:#22222b;
-   --theme2:#eeeeef;
-   --theme3:#51f659;
+   --theme3:#0acb14;
+}
+body{
+   background:url("https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYxODQ4NDUwLXdpa2ltZWRpYS1pbWFnZS1qb2I1NzItMS5qcGc.jpg") no-repeat;
+   background-size: cover;
 }
 .section{
    width: 100vw;
    height: 100vh;
    position: relative;
    overflow: hidden;
-   background: var(--theme1);
    color: var(--theme2);
    font-family: 'Ubuntu', sans-serif;
 }
@@ -37,6 +40,8 @@ html{
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+   background: #22222bbb;
+   backdrop-filter: blur(10px);
 }
 header{
    display: flex;
@@ -51,7 +56,7 @@ header{
 }
 .heading{
    margin-right: 5vw;
-   font-size: 2.4rem;
+   font-size: 2.5rem;
    color: var(--theme3);
 }
 .mode-switch{
@@ -72,20 +77,19 @@ header{
 .main-left,.main-right{
    /* background-color: blue; */
    flex: 1;
-   padding: 0 10px;
    position: relative;
 }
 .main-left{
    text-align: right;
-   padding-right: 50px;
+   padding-right: 5%;
 }
 .shareBtn{
    position: absolute;
    width: 2rem;
    height: auto;
    word-wrap: break-word;
-   background: #fff;
-   color: #000;
+   background: var(--theme2);
+   color: var(--theme1);
    font-weight: 700;
    top: 50%;
    left: 0;
@@ -94,6 +98,7 @@ header{
    border-radius:0 1rem 1rem 0;
    transform: translateY(-50%) ;
    font-family: 'Caveat', cursive;
+   font-size: .8rem;
 }
 .shareBtn b{
    display: inline-block;
@@ -101,12 +106,15 @@ header{
 }
 
 .pfp{
-   min-width: 300px;
-   width: 50%;
-   height: 300px;
+   min-width: 360px;
+   width: 60%;
+   height: 360px;
    border-radius: 15px;
    object-fit: cover;
-   filter: blur(10px);
+   /* filter: blur(10px); */
+}
+.main-right{
+   padding-left: 4%;
 }
 .hello{
    font: 400 2.5rem 'Sacramento',cursive;
@@ -137,14 +145,22 @@ header{
    align-items: center;
    justify-content: space-evenly;
    width: 60px;
-   max-height: 50vh;
-   height: 100vh;
+   height: 70%;
 }
 .contacts button{
-   font-size: 1.5rem;
+   font-size: 1.6rem;
+   transition: all .2s;
 }
+.contacts button:hover{
+   transform: scale(1.3);
+   padding-right: 1rem;
+}
+.contacts .linkedin:hover{color: #507ec3;}
+.contacts .stcOvf:hover{color: #f99b03;}
+.contacts .instagram:hover{color: #e129fd;}
+.contacts .gmail:hover{color: #fe2a2a;}
 .footer{
-   height: 3rem;
+   height: 3.8rem;
    position: relative;
    z-index: 5;
 }
@@ -156,6 +172,7 @@ header{
    width: 100%;
    height: 100%;
 }
+
 
 /* Strips' styling */
 .strip{
