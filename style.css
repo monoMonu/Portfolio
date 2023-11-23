@@ -25,13 +25,15 @@ html{
    --theme3:#0acb14;
 }
 body{
+   width: 100vw;
+   height: 100vh;
    background:url("https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYxODQ4NDUwLXdpa2ltZWRpYS1pbWFnZS1qb2I1NzItMS5qcGc.jpg") no-repeat;
    background-size: cover;
 }
 .section{
    width: 100vw;
    height: 100vh;
-   position: relative;
+   position: absolute;
    overflow: hidden;
    color: var(--theme2);
    font-family: 'Ubuntu', sans-serif;
