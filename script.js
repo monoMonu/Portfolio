@@ -1,7 +1,6 @@
 const modeSwitch = document.querySelector(".mode-switch");
 const firstPage = document.querySelector(".firstPage");
 
-document.write(9);
 
 modeSwitch.addEventListener("click", changeMode());
 function changeMode(){
@@ -18,3 +17,4 @@ function changeMode(){
       rv.style.setProperty("--theme2","#edf");
    }
 }
+alert(9);

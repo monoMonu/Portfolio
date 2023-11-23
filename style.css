@@ -41,6 +41,7 @@ body{
    flex-direction: column;
    justify-content: space-between;
    background: #22222bbb;
+   -webkit-backdrop-filter: blur(10px);
    backdrop-filter: blur(10px);
 }
 header{
