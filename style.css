@@ -8,6 +8,7 @@
    padding: 0;
    margin: 0;
    box-sizing: border-box;
+   transition: all .2s;
 }
 button{
    border: none;
@@ -20,9 +21,10 @@ html{
    font-size: 18px;
 }
 :root{
-   --theme2:#eef;
-   --theme1:#22222b;
-   --theme3:#0acb14;
+   --theme1:rgb(175, 175, 183);
+   --theme2:#22222b;
+   --theme3: rgb(225, 48, 86); /* #0ba284 */
+   --trans-theme2:rgba(240, 240, 255, .5);
 }
 body{
    width: 100vw;
@@ -33,7 +35,7 @@ body{
 .section{
    width: 100vw;
    height: 100vh;
-   position: absolute;
+   position: as;
    overflow: hidden;
    color: var(--theme2);
    font-family: 'Ubuntu', sans-serif;
@@ -42,9 +44,9 @@ body{
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   background: #22222bbb;
-   -webkit-backdrop-filter: blur(10px);
-   backdrop-filter: blur(10px);
+   background: var(--trans-theme2);
+   -webkit-backdrop-filter: blur(12px);
+   backdrop-filter: blur(12px);
 }
 header{
    display: flex;
@@ -52,7 +54,7 @@ header{
    justify-content: end;
    /* background: #fff4; */
    height: 4.8rem;
-   font: 400 1.5rem 'caveat Brush',sans-serif;
+   font: 400 1.6rem 'caveat Brush',sans-serif;
    padding: .3rem;
    position: relative;
    z-index: 5;
@@ -149,9 +151,16 @@ header{
    justify-content: space-evenly;
    width: 60px;
    height: 70%;
+   border-radius: .8rem 0 0 .8rem;
+}
+.contacts:hover{
+   background: rgba(0,0,0,.2);
 }
 .contacts button{
+   width: 2.5rem;
+   height: 2.5rem;
    font-size: 1.6rem;
+   border-radius: 50%;
    transition: all .2s;
 }
 .contacts button:hover{
