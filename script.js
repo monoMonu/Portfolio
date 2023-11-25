@@ -1,25 +1,33 @@
 
 const modeSwitch = document.querySelector(".mode-switch");
 const firstPage = document.querySelector(".firstPage");
+const filler = document.querySelector("#filler");
 const r = document.querySelector(':root');
 
 
 function changeMode(){
-   
-   if(modeSwitch.classList.contains("light")){
-      r.style.setProperty("--theme1","rgb(175, 175, 183)");
-      r.style.setProperty("--theme2", "#22222b");
-      r.style.setProperty("--theme3","");
-      r.style.setProperty("--trans-theme2","rgba(240, 240, 255, .5)");
-      modeSwitch.classList.remove("light");
-   }
-   else{
+   // Explosion 
+   filler.classList.add("explode");
+   setTimeout(() => filler.classList.remove("explode"), 550);
+   setTimeout(()=>{
+
+      if(modeSwitch.classList.contains("light")){
+         r.style.setProperty("--theme1","rgb(175, 175, 183)");
+         r.style.setProperty("--theme2", "#22222b");
+         r.style.setProperty("--theme3","");
+         r.style.setProperty("--trans-theme1","rgba(240, 240, 255, .5)");
+         r.style.setProperty("--trans-theme2","rgba(33, 33, 43, .9)");
+         modeSwitch.classList.remove("light");
+      }
+      else{
       r.style.setProperty("--theme1","#22222b");
       r.style.setProperty("--theme2","rgb(175, 175, 183)");
       r.style.setProperty("--theme3","#0ba284");
-      r.style.setProperty("--trans-theme2","rgba(33, 33, 43, .7)");
+      r.style.setProperty("--trans-theme1","rgba(33, 33, 43, .7)");
+      r.style.setProperty("--trans-theme2","rgba(240, 240, 255, .9)");
       modeSwitch.classList.add("light");
-   }
+      }
+   },100)
 }
 modeSwitch.addEventListener("click", changeMode);
 
