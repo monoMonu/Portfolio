@@ -75,9 +75,8 @@ header{
    -webkit-text-stroke: 1px;
 }
 #filler{
-   content: "";
-   width: 5px;
-   height: 5px;
+   width: 0;
+   height: 0;
    border-radius: 50%;
    background: var(--trans-theme2);
    -webkit-backdrop-filter: blur(12px);
@@ -86,6 +85,7 @@ header{
    top: 0;
    right: 0;
    transform: translate(50%, -50%);
+   z-index: 51;
 }
 .explode{
    animation: explode .5s;
@@ -114,7 +114,7 @@ header{
 }
 .main-left{
    text-align: right;
-   padding-right: 5%;
+   padding: 0 5%;
 }
 .shareBtn{
    position: fixed;
@@ -175,6 +175,35 @@ header{
    font: 400 1.4rem 'Caveat Brush',cursive;
    margin-top: 2rem;
 }
+.techStack{
+   background: var(--trans-theme2);
+   display: none;
+   align-items: center;
+   justify-content: space-around;
+   width: 90%;
+   min-width: 300px;
+   max-width: 450px;
+   margin: 0 auto;
+   padding: 1rem ;
+   border-radius: 1rem;
+   position: absolute;
+   left: 0;
+   margin-top: 1rem;
+}
+.techStack img{
+   width: 15%;
+   max-width: 2.5rem;
+   opacity: 0;
+   margin-left: -1rem;
+}
+.showTechStack{
+   display: flex;
+   animation: fade-in .2s;
+}
+@keyframes fade-in {
+   from{opacity: 0;}
+   to{opacity: 1;}
+}
 .contacts{
    display: flex;
    flex-direction: column;
@@ -214,6 +243,13 @@ header{
    /* background: red; */
    width: 100%;
    height: 100%;
+}
+#copyright{
+   font: 400 .6rem "Ubuntu", monospace;
+   color: var(--theme2);
+   position: absolute;
+   bottom: .8rem;
+   left: .8rem;
 }
 
 
@@ -270,20 +306,68 @@ header{
    .heading, .mode-switch{
       color: var(--theme2);
    }
-   .section{
+   .firstPage{
       overflow-x: hidden;
       overflow-y: auto;
    }
    .main{
       display: block;
+      height: auto;
    }
    .main-left, .main-right{
       padding: 6%;
+      text-align: center;
+   }
+   .hello{
+      display: inline-block;
+      margin-left: -15rem;
    }
    .bio{
-      padding: 0;
+      padding: 1rem;
    }
-   .footer{
+   .techStack{
+      position: relative;
+      display: flex;
+      padding: 1.5rem;
+   }
+   .techStack img{
+      opacity: 1;
+      margin-left: 0;
+   }
+   .contacts{
+      flex-direction: row;
+      height: auto;
+      width: 80%;
+      margin: 6rem auto 3rem;
+      flex-wrap: wrap;
+      position: relative;
+   }
+   .contacts::before{
+      content: "CONTACT ME";
+      position: absolute;
+      background: var(--theme2);
+      color: var(--theme1);
+      padding: .6rem 1.5rem;
+      border-radius: 2rem;
+      top: -5rem;
+      font: 400 1.4rem 'Caveat Brush',cursive;
+   }
+   .contacts button{
+      font-size: 1.8rem;
+      margin: 0 .75rem;
+   }
+   .contacts button:hover{
+      transform: scale(1.3);
+      padding:0 0 1rem;
+   }
+
+   #copyright{
+      font-size: .8rem;
+      position: relative;
+      text-align: center;
+      left: 0;
+   }
+   .nxtPgBtn{
       display: none;
    }
 }

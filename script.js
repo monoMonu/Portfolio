@@ -32,3 +32,29 @@ function changeMode(){
 modeSwitch.addEventListener("click", changeMode);
 
 
+const techStackBtn = document.querySelector("#techStackBtn");
+const techStack = document.querySelector(".techStack");
+const logos = document.querySelectorAll(".techStack img");
+techStackBtn.addEventListener("click", showTechStack);
+function showTechStack(){
+   if(!techStack.classList.contains("showTechStack")){
+     techStack.classList.add("showTechStack");
+     logos.forEach((el, i)=>{
+        setTimeout(()=>{
+           el.style.opacity = 1;
+           el.style.marginLeft = "0";
+        },(i+1)*200);
+     })
+   }
+   else{
+     logos.forEach((el, i, arr)=>{
+        setTimeout(()=>{
+           el.style.opacity = 0;
+           el.style.marginLeft = "1rem";
+        },(arr.length-i)*200);
+     })
+     setTimeout(()=>techStack.classList.remove("showTechStack"),(logos.length+1)*200);
+   }
+}
+
+
