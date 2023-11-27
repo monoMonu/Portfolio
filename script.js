@@ -57,4 +57,17 @@ function showTechStack(){
    }
 }
 
-
+// copy site Url
+const copyLinkBtn = document.querySelector(".copyLinkBtn");
+const copyTooltip = document.querySelector("#copyTooltip");
+copyLinkBtn.addEventListener("click", copySiteUrl);
+function copySiteUrl(){
+  const urlField = document.querySelector("#urlField");
+  urlField.value = window.location.href;
+  urlField.select();
+  navigator.clipboard.writeText(urlField.value);
+  copyTooltip.style.display = "inline-block";
+  setTimeout(()=>{
+   copyTooltip.style.display = "none";
+  },3000);
+}

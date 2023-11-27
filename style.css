@@ -17,6 +17,10 @@ button{
    color: var(--theme2);
    cursor: pointer;
 }
+a{
+   text-decoration: none;
+   color: inherit;
+}
 html{
    font-size: 18px;
 }
@@ -116,7 +120,7 @@ header{
    text-align: right;
    padding: 0 5%;
 }
-.shareBtn{
+.copyLinkBtn{
    position: fixed;
    width: 2rem;
    height: auto;
@@ -126,18 +130,44 @@ header{
    font-weight: 700;
    top: 50%;
    left: 0;
-   padding:1.2rem  .5rem;
+   padding:1.2rem  .6rem;
    line-height: 1.2;
    border-radius:0 1rem 1rem 0;
    transform: translateY(-50%) ;
    font-family: 'Caveat', cursive;
    font-size: .8rem;
 }
-.shareBtn b{
+.copyLinkBtn b{
    display: inline-block;
    padding-top: .5rem;
+   font-size: .9rem;
 }
-
+#copyTooltip{
+   display: none;
+   padding: .4rem 1rem;
+   background: var(--theme2);
+   border-radius: .3rem;
+   color: var(--theme1);
+   z-index: -1;
+   position: absolute;
+   top: 45%;
+   right: -6rem;
+   animation: fade-in .2s, slideRight .2s;
+}
+@keyframes slideRight {
+   from{right: -5rem;}
+   to{right: -6rem;}
+}
+#copyTooltip::before{
+   content: "";
+   position: absolute;
+   left: -.9rem;
+   border: .5rem transparent solid;
+   border-right-color: var(--theme2);
+}
+#urlField{
+   display: none;
+}
 .pfp{
    max-width: 360px;
    width: 100%;
@@ -245,7 +275,7 @@ header{
    height: 100%;
 }
 #copyright{
-   font: 400 .6rem "Ubuntu", monospace;
+   font: 400 .7rem "Ubuntu", monospace;
    color: var(--theme2);
    position: absolute;
    bottom: .8rem;
@@ -289,7 +319,7 @@ header{
 }
 
 /* Media Queries */
-@media screen and (max-width:480px) {
+@media screen and (max-width:560px) {
    html{
       font-size: 15px;
    }
@@ -323,7 +353,7 @@ header{
       margin-left: -15rem;
    }
    .bio{
-      padding: 1rem;
+      padding: 1rem 1rem 3rem;
    }
    .techStack{
       position: relative;
@@ -338,7 +368,7 @@ header{
       flex-direction: row;
       height: auto;
       width: 80%;
-      margin: 6rem auto 3rem;
+      margin: 7rem auto 3rem;
       flex-wrap: wrap;
       position: relative;
    }
@@ -355,6 +385,7 @@ header{
    .contacts button{
       font-size: 1.8rem;
       margin: 0 .75rem;
+
    }
    .contacts button:hover{
       transform: scale(1.3);
