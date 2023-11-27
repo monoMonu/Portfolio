@@ -25,11 +25,11 @@ html{
    font-size: 18px;
 }
 :root{
-   --theme1:rgb(175, 175, 183);
-   --theme2:rgb(34, 34, 43);
-   --theme3: rgb(225, 48, 86); /* #0ba284 */
-   --trans-theme1:rgba(240, 240, 255, .5);
-   --trans-theme2:rgba(33, 33, 43, .9);
+   --theme1:rgb(34, 34, 43);
+   --theme2:rgb(175, 175, 183);
+   --theme3: #0ba284;
+   --trans-theme1:rgba(33, 33, 43, .9);
+   --trans-theme2:rgba(240, 240, 255, .5);
 }
 body{
    width: 100vw;
@@ -51,9 +51,11 @@ body{
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+   overflow: hidden;
    background: var(--trans-theme1);
    -webkit-backdrop-filter: blur(12px);
    backdrop-filter: blur(12px);
+   transition: none;
 }
 header{
    display: flex;
@@ -140,7 +142,9 @@ header{
 .copyLinkBtn b{
    display: inline-block;
    padding-top: .5rem;
-   font-size: .9rem;
+   margin-left: -.1rem;
+   font-size: 1rem;
+   -webkit-text-stroke: .5px;
 }
 #copyTooltip{
    display: none;
@@ -194,7 +198,7 @@ header{
    color: var(--theme3);
 }
 .bio{
-   font: 400 1.5rem 'Ubuntu',sans-serif;
+   font: 400 1.2rem 'Ubuntu',sans-serif;
    padding: 1rem 1rem 1rem 0;
 }
 #techStackBtn{
@@ -323,6 +327,9 @@ header{
    html{
       font-size: 15px;
    }
+   body{
+      overflow-y: auto;
+   }
    .header{
       position: sticky;
       top: 0;
@@ -337,8 +344,8 @@ header{
       color: var(--theme2);
    }
    .firstPage{
-      overflow-x: hidden;
-      overflow-y: auto;
+      /* overflow-y: auto; */
+      height: auto;
    }
    .main{
       display: block;
@@ -354,6 +361,7 @@ header{
    }
    .bio{
       padding: 1rem 1rem 3rem;
+      font-size: 1.4rem;
    }
    .techStack{
       position: relative;
