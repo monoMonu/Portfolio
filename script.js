@@ -7,37 +7,43 @@ const r = document.querySelector(':root');
 
 function changeMode(){
    // Explosion 
-   filler.classList.add("explode");
-   setTimeout(() => filler.classList.remove("explode"), 550);
+         // filler.classList.add("explode");
+         // setTimeout(() => filler.classList.remove("explode"), 550);
    setTimeout(()=>{
       modeSwitch.classList.toggle("bi-brightness");
       modeSwitch.classList.toggle("bi-moon");
 
       if(modeSwitch.classList.contains("light")){
+         r.style.setProperty("--bgGrad","#13131c,#13131c,#33333b");
+         r.style.setProperty("--text","#eef");
+         r.style.setProperty("--text2","#13131c");
          r.style.setProperty("--theme1","#22222b");
-         r.style.setProperty("--theme2","rgb(175, 175, 183)");
+         r.style.setProperty("--theme2","rgb(212, 212, 248)");
          r.style.setProperty("--theme3","#0ba284");
          r.style.setProperty("--trans-theme1","rgba(33, 33, 43, .7)");
          r.style.setProperty("--trans-theme2","rgba(240, 240, 255, .9)");
          modeSwitch.classList.remove("light");
       }
       else{
-         r.style.setProperty("--theme1","rgb(175, 175, 183)");
+         r.style.setProperty("--bgGrad","#cce, #ece");
+         r.style.setProperty("--text","#2c2c2c");
+         r.style.setProperty("--text2","#eef");
+         r.style.setProperty("--theme1","rgb(212, 212, 248)");
          r.style.setProperty("--theme2", "#22222b");
          r.style.setProperty("--theme3","rgb(225, 48, 86)");
          r.style.setProperty("--trans-theme1","rgba(240, 240, 255, .5)");
          r.style.setProperty("--trans-theme2","rgba(33, 33, 43, .9)");
          modeSwitch.classList.add("light");
       }
-   },100)
+   })
 }
 modeSwitch.addEventListener("click", changeMode);
 
 
 const techStackBtn = document.querySelector("#techStackBtn");
-const techStack = document.querySelector(".techStack");
+// const techStack = document.querySelector(".techStack");
 const logos = document.querySelectorAll(".techStack img");
-techStackBtn.addEventListener("click", showTechStack);
+// techStackBtn.addEventListener("click", showTechStack);
 function showTechStack(){
    if(!techStack.classList.contains("showTechStack")){
      techStack.classList.add("showTechStack");
@@ -58,6 +64,9 @@ function showTechStack(){
      setTimeout(()=>techStack.classList.remove("showTechStack"),(logos.length+1)*200);
    }
 }
+
+// Disabling Right Click
+// window.addEventListener("contextmenu", (e)=> e.preventDefault());
 
 // copy site Url
 const copyLinkBtn = document.querySelector(".copyLinkBtn");

@@ -8,13 +8,13 @@
    padding: 0;
    margin: 0;
    box-sizing: border-box;
-   transition: all .2s;
+   transition: all .25s;
 }
 button{
    border: none;
    outline: none;
    background: transparent;
-   color: var(--theme2);
+   color: var(--text);
    cursor: pointer;
    -webkit-tap-highlight-color: none;
 }
@@ -24,18 +24,32 @@ a{
 }
 html{
    font-size: 18px;
+   -webkit-scroll-behaviour:smooth;
 }
 :root{
-   --theme1:rgb(34, 34, 43);
-   --theme2:rgb(175, 175, 183);
+   --theme1: #8e8ef5;
+   --theme2: rgb(212, 212, 248);
    --theme3: #0ba284;
    --trans-theme1:rgba(33, 33, 43, .9);
    --trans-theme2:rgba(240, 240, 255, .5);
+   --bgGrad:#13131c,#13131c,#33333b;
+   --text:#eef;
+   --text2:#13131c;
+
+   /*--text:var(--white);
+   --theme1:var(--lightTheme1);
+   --theme2:var(--lightTheme2);
+   --trans-theme1:var(--transLightTheme1);
+   --trans-theme2:var(--transLightTheme2); */
+
+
+   /* Deep navy blue (#01257D), electric blue (#00FFFF */
 }
 body{
    width: 100vw;
    height: 100vh;
-   background:url("images/background.webp") no-repeat;
+   background:linear-gradient(to bottom right, var(--bgGrad));
+   /* background:url("images/background.webp") no-repeat, var(--theme1); */
    background-size: cover;
    position: relative;
    overflow: hidden;
@@ -45,7 +59,7 @@ body{
    width: 100vw;
    height: 100vh;
    position: relative;
-   color: var(--theme2);
+   color: var(--text);
    font-family: 'Ubuntu', sans-serif;
 }
 .firstPage{
@@ -53,26 +67,52 @@ body{
    flex-direction: column;
    justify-content: space-between;
    overflow: hidden;
-   background: var(--trans-theme1);
+   /* background-color: var(--trans-theme1); */
    -webkit-backdrop-filter: blur(10px);
    backdrop-filter: blur(10px);
    transition: none;
 }
-header{
+.header{
    display: flex;
    align-items: center;
    justify-content: end;
    /* background: #fff4; */
    height: 4.8rem;
-   font: 400 1.6rem 'caveat Brush',sans-serif;
+   font: 400 1.6rem 'Caveat Brush',sans-serif;
    padding: .3rem;
    position: relative;
    z-index: 50;
 }
-.heading{
+/* .heading{
    margin-right: 5vw;
    font-size: 2.5rem;
    color: var(--theme3);
+} */
+#navBar{
+   list-style-type:none;
+   font-variant:small-caps;
+   display: flex;
+   font-size: 1.5rem;
+   /* width:200px;
+   font-size:20px;
+   position:relative;
+   margin-top:50px;
+   left:-200px;
+   transition:left .5s; */
+}
+ul li{
+   margin-right: min(8vw,4rem);
+}
+ul li a{
+   color: var(--text);
+   display: inline-block;
+   /* border-bottom:1px grey solid;
+   background:#ddd; */
+}
+ul li:hover a{
+   /* background:#22222b; */
+   color:var(--theme3);
+   transform: scale(1.2);
 }
 .mode-switch{
    width: 4rem;
@@ -89,8 +129,8 @@ header{
    -webkit-backdrop-filter: blur(10px);
    backdrop-filter: blur(10px);
    position: absolute;
-   top: 0;
-   right: 0;
+   top: 2.4rem;
+   right: 2.4rem;
    transform: translate(50%, -50%);
    z-index: 51;
 }
@@ -125,11 +165,12 @@ header{
 }
 .copyLinkBtn{
    position: fixed;
+   z-index: 51;
    width: 2rem;
    height: auto;
    word-wrap: break-word;
    background: var(--theme2);
-   color: var(--theme1);
+   color: var(--text2);
    font-weight: 700;
    top: 50%;
    left: 0;
@@ -142,6 +183,7 @@ header{
 }
 .copyLinkBtn b{
    display: inline-block;
+   color: var(--text2);
    padding-top: .5rem;
    margin-left: -.1rem;
    font-size: 1rem;
@@ -151,8 +193,8 @@ header{
    display: none;
    padding: .4rem 1rem;
    background: var(--theme2);
-   border-radius: .3rem;
-   color: var(--theme1);
+   border-radius: .2rem;
+   color: var(--text2);
    z-index: -1;
    position: absolute;
    top: 45%;
@@ -185,7 +227,7 @@ header{
    padding-left: 4%;
 }
 .main-right *{
-   color: var(--theme2);
+   color: var(--text);
 }
 .hello{
    font: 400 2.5rem 'Sacramento',cursive;
@@ -200,9 +242,10 @@ header{
 }
 .bio{
    font: 400 1.2rem 'Ubuntu',sans-serif;
-   padding: 1rem 1rem 1rem 0;
+   line-height: 1.5;
+   padding: max(1rem,5%) 1rem 1rem 0;
 }
-#techStackBtn{
+/* #techStackBtn{
    background: var(--theme2);
    color: var(--theme1);
    padding: .7rem 1.8rem;
@@ -238,7 +281,7 @@ header{
 @keyframes fade-in {
    from{opacity: 0;}
    to{opacity: 1;}
-}
+} */
 .contacts{
    display: flex;
    flex-direction: column;
@@ -267,6 +310,7 @@ header{
    height: 3.8rem;
    position: relative;
    z-index: 5;
+   color: var(--text);
 }
 .nxtPgBtn{
    display: grid;
@@ -278,7 +322,7 @@ header{
 }
 #copyright{
    font: 400 .7rem "Ubuntu", monospace;
-   color: var(--theme2);
+   color: var(--text);
    position: absolute;
    bottom: .8rem;
    left: .8rem;
@@ -323,7 +367,7 @@ header{
 /* Media Queries */
 @media screen and (max-width:560px) {
    html{
-      font-size: 15px;
+      font-size: 16px;
    }
    body{
       overflow-y: auto;
@@ -339,7 +383,7 @@ header{
    }
    .heading{font-size: 2.3rem;}
    .heading, .mode-switch{
-      color: var(--theme2);
+      color: var(--text);
    }
    .firstPage{
       /* overflow-y: auto; */
@@ -360,6 +404,7 @@ header{
    .bio{
       padding: 1rem 1rem 3rem;
       font-size: 1.4rem;
+      font-weight: 700;
    }
    .techStack{
       position: relative;
@@ -383,7 +428,7 @@ header{
       content: "CONTACT ME";
       position: absolute;
       background: var(--theme2);
-      color: var(--theme1);
+      color: var(--text2);
       padding: .6rem 1.5rem;
       border-radius: 2rem;
       top: -5rem;
