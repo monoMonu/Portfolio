@@ -3,6 +3,7 @@ const modeSwitch = document.querySelector(".mode-switch");
 const firstPage = document.querySelector(".firstPage");
 const filler = document.querySelector("#filler");
 const r = document.querySelector(':root');
+const name = document.querySelector("#name");
 
 
 function changeMode(){
@@ -69,16 +70,27 @@ function showTechStack(){
 // window.addEventListener("contextmenu", (e)=> e.preventDefault());
 
 // copy site Url
-const copyLinkBtn = document.querySelector(".copyLinkBtn");
-const copyTooltip = document.querySelector("#copyTooltip");
-copyLinkBtn.addEventListener("click", copySiteUrl);
-function copySiteUrl(){
-  const urlField = document.querySelector("#urlField");
-  urlField.value = window.location.href;
-  urlField.select();
-  navigator.clipboard.writeText(urlField.value);
-  copyTooltip.style.display = "inline-block";
-  setTimeout(()=>{
-   copyTooltip.style.display = "none";
-  },3000);
+// const copyLinkBtn = document.querySelector(".copyLinkBtn");
+// const copyTooltip = document.querySelector("#copyTooltip");
+// copyLinkBtn.addEventListener("click", copySiteUrl);
+// function copySiteUrl(){
+//   const urlField = document.querySelector("#urlField");
+//   urlField.value = window.location.href;
+//   urlField.select();
+//   navigator.clipboard.writeText(urlField.value);
+//   copyTooltip.style.display = "inline-block";
+//   setTimeout(()=>{
+//    copyTooltip.style.display = "none";
+//   },3000);
+// }
+
+
+// Typing Animation
+function typeText(str,elem,i){
+   elem.innerText = "";
+   let st = setInterval(()=>{
+      if(i<str.length) elem.innerText += str[i++];
+      else clearInterval(st);
+   },450)
 }
+setInterval(()=>{typeText("Monu", name, 0)},7000);

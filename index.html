@@ -9,34 +9,51 @@
 </head>
 <body>
     
+  <!-- Fixed Header -->
+  <header class="header">
+    <!-- <p class="heading"><a href="#"> Monu's Portfolio</a></p>  -->
+    <!-- <div id="toggler">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+   </div> -->
+    <ul id="navBar">
+      <li><a href="#"  title="about">About</a></li>
+      <li><a href="#" title="projects">Projects</a></li>
+      <li><a href="#" title="contact">Contact</a></li>
+    </ul>
+    <button title="mode-switch" type="button" class="bi bi-brightness-high mode-switch"></button>
+  </header>
+  
+  <footer class="footer">
+    <p id="copyright">&copy;Monu, 2023. All Rights reserved.</p>
+  </footer>
+
+  <!-- Strips' design -->
+  <div class="strip one"></div>
+  <div class="strip two"></div>
+  <div class="strip three"></div>
+  <div class="strip four"></div>
+
+  <!-- Link Copy Button -->
+  <!-- <button type="button" class="copyLinkBtn">
+    COPY
+    <b class="bi bi-link-45deg"></b>
+    <span id="copyTooltip">Copied!!!</span>
+  </button> -->
+
   <section class="section firstPage">
-    <header class="header">
-      <!-- <p class="heading"><a href="#"> Monu's Portfolio</a></p>  -->
-      <!-- <div id="toggler">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-     </div> -->
-      <ul id="navBar">
-        <li><a href="#"  title="about">About</a></li>
-        <li><a href="#" title="projects">Projects</a></li>
-        <li><a href="#" title="contact">Contact</a></li>
-      </ul>
-      <button title="mode-switch" type="button" class="bi bi-brightness-high mode-switch"></button>
-    </header>
     <div class="main">
       <div class="main-left">
-        <button type="button" class="copyLinkBtn">
-          COPY
-          <b class="bi bi-link-45deg"></b>
-          <span id="copyTooltip">Copied!!!</span>
-        </button>
         <img class="pfp" src="images/pfp.jpg" alt="Profile Picture"/>
       </div>
       <div class="main-right">
         <div class="details">
-          <span class="hello">hello,</span>
-          <p class="nameIntro">I am <span id="name">Monu</span></p>
+          <!-- <span class="hello">hello,</span> -->
+          <p class="nameIntro">
+            <span class="hello">hello,</span>
+            I am <span id="name">Monu</span>
+          </p>
           <p class="bio">I  am a B-Tech student and Front End Developer. <br>I have a keen interest in Tech and Innovations.</p>
           <!-- <button id="techStackBtn">MY TECH STACK</button> -->
         </div>
@@ -47,12 +64,14 @@
           <img src="images/gitLogo.png" alt="HTML Logo" />
           <img src="images/reactLogo.png" alt="REACT Logo" />
         </div> -->
+
+        <!-- Social-Media -->
       </div>
-      <div class="contacts">
+      <div class="social-media">
         <a href="https://github.com/monoMonu">
           <button title="github" type="button" class="bi bi-github github"></button>
         </a>
-        <a href="https://www.linkedin.com/in/monomonu">
+        <a href="https://www.linkedin.com/in/monoMonu">
           <button title="linkedin" type="button" class="bi bi-linkedin linkedin"></button>
         </a>
         <a href="https://stackoverflow.com/users/22094729/monu">
@@ -66,20 +85,39 @@
         </a>
       </div>
     </div>
-    <footer class="footer">
-      <p id="copyright">&copy;Monu, 2023. All Rights reserved.</p>
-      <b class="bi bi-chevron-double-up nxtPgBtn"></b>
-    </footer>
-    <!-- Strips' design -->
-    <div class="strip one"></div>
-    <div class="strip two"></div>
-    <div class="strip three"></div>
-    <div class="strip four"></div>
-
+    
     <div id="filler"></div>
   </section>
+
+  
+  <!-- Contact Form -->
+  <section class="section contact-form">
+    <form>
+      <h2 class="form-heading">Contact Me</h2>
+
+      <label for="form-name">Name:</label>
+      <input type="text" id="form-name" name="name" required>
+  
+      <label for="form-email">Email:</label>
+      <input type="email" id="form-email" name="email" required>
+  
+      <label for="form-subject">Subject:</label>
+      <input type="text" id="form-subject" name="subject" required>
+  
+      <label for="form-message">Message:</label>
+      <textarea id="form-message" name="message" required></textarea>
+  
+      <button type="submit" id="formSendBtn">Send</button>
+    </form>
+    <!-- <div class="contact-box">
+      <div class="other-contacts">
+        <h2 class="other-contacts-heading">Connect with me</h2>
+      </div>    
+    </div> -->
+  </section>
+
   <!-- Field to copy site url -->
-  <input title="url Field" type="text" id="urlField" >
+  <!-- <input title="url Field" type="text" id="urlField" > -->
 
   
 </body>
